@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>evShip</name>
+    <events>
+        <variable constant="0" name="calculandoPontos" sid="553857816420417" static="0" type="number">0</variable>
+        <include>evGlobalUtils</include>
+        <variable constant="0" name="tempo" sid="315567853562030" static="0" type="number">0</variable>
+        <variable constant="0" name="totIncendioFase" sid="249620560296837" static="0" type="number">1</variable>
+        <include>evIncendio</include>
+        <include>evPlayer</include>
+        <event-block sid="178637438392176">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="597384817175688" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set web font" sid="652544084587508" type="txtDinheiro">
+                    <param id="0" name="Family name">&quot;crush&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="323234373166722" type="txtApagados">
+                    <param id="0" name="Family name">&quot;crush&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="835646371491226" type="txtExplosoes">
+                    <param id="0" name="Family name">&quot;crush&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="882228998874343" type="txtExtintore">
+                    <param id="0" name="Family name">&quot;crush&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="430082949653205" type="txtIncendios">
+                    <param id="0" name="Family name">&quot;crush&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="527402499857194" type="txtIncendiosTotal">
+                    <param id="0" name="Family name">&quot;crush&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="878975500959215" type="txtTimer">
+                    <param id="0" name="Family name">&quot;crush&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="786292566764633" type="txtDinheiro">
+                    <param id="0" name="Text">&quot;$&quot; &amp; str(Saldo) &amp; &quot;,00&quot;</param>
+                </action>
+                <action id="-10" name="Set value" sid="857180399355475" type="Equipar">
+                    <param id="0" name="Instance variable">equipado</param>
+                    <param id="1" name="Value">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="600863578227997" type="System">
+                    <param id="0" name="Variable">calculandoPontos</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="524964000037621" type="System">
+                    <param id="0" name="Variable">tempo</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="924386194176559" type="System">
+                    <param id="0" name="Variable">contadoExplosao</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="750322462755717" type="System">
+                    <param id="0" name="Variable">incendioApagado</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="735252660012442" type="System">
+                    <param id="0" name="Variable">contadorIncendio</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="188942075815379" type="player">
+                    <param id="0" name="Instance variable">life</param>
+                    <param id="1" name="Value">playrLife</param>
+                </action>
+                <action id="-9" name="Set value" sid="373696587688687" type="System">
+                    <param id="0" name="Variable">mensagemFinal</param>
+                    <param id="1" name="Value">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="385231191783430" type="System">
+                    <param id="0" name="Variable">isGameOver</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="323136999489756" type="System">
+                    <param id="0" name="Variable">extintorEmUso</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="495229145123712" type="System">
+                    <param id="0" name="Variable">cargaExtintor</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Add to" sid="459970245542243" type="System">
+                    <param id="0" name="Variable">nivel</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="862631083547932" type="System">
+                    <param id="0" name="Variable">totIncendioFase</param>
+                    <param id="1" name="Value">nivel * nivel</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="549509064527278">
+            <conditions>
+                <condition id="0" name="On function" sid="471589979748321" type="Function">
+                    <param id="0" name="Name">&quot;criar_incendio&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="270931656686452" type="System">
+                    <param id="0" name="Variable">contadorIncendio</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-3" name="Create object" sid="823296116732148" type="System">
+                    <param id="0" name="Object to create">foco</param>
+                    <param id="1" name="Layer">&quot;game&quot;</param>
+                    <param id="2" name="X">fireArea.X + random(fireArea.Width)</param>
+                    <param id="3" name="Y">fireArea.Y +random(fireArea.Height)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="399596417853936">
+                    <conditions>
+                        <condition id="-9" inverted="1" name="Is visible" sid="844851680658676" type="fire_alarm" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="779537640736454" type="fire_alarm">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="749638727489649" type="fire_alarm">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">999999</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="255827798955740" type="txtIncendios">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="832911080142812" type="Audio">
+                            <param id="0" name="Audio file">alarme</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;alarme&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="494491057634998" type="Audio">
+                            <param id="0" name="Audio file">fogo</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;fogo&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="567705255544285">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="695762974835313" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="692046695461633">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="936339382844930" type="System">
+                            <param id="0" name="Variable">calculandoPontos</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="685191535641493" type="Function">
+                            <param id="0" name="Name">&quot;criar_incendio&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="651440772583103">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="612725501009479" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="688698207846584" type="txtIncendios">
+                    <param id="0" name="Text">&quot;X &quot; &amp; foco.Count</param>
+                </action>
+                <action id="0" name="Set text" sid="181105787452645" type="txtDinheiro">
+                    <param id="0" name="Text">&quot;$&quot; &amp; str(Saldo) &amp; &quot;,00&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="497011494568069" type="txtExplosoes">
+                    <param id="0" name="Text">&quot;X &quot; &amp; str(contadoExplosao) &amp; &quot; / &quot; &amp; totIncendioFase</param>
+                </action>
+                <action id="0" name="Set text" sid="163036980950391" type="txtIncendiosTotal">
+                    <param id="0" name="Text">&quot;X &quot; &amp; str(contadorIncendio)</param>
+                </action>
+                <action id="0" name="Set text" sid="258450472428937" type="txtApagados">
+                    <param id="0" name="Text">&quot;X &quot; &amp; str(incendioApagado) &amp; &quot; / &quot; &amp; totIncendioFase</param>
+                </action>
+                <action id="0" name="Set text" sid="921050009343502" type="txtTimer">
+                    <param id="0" name="Text">tempo</param>
+                </action>
+                <action id="3" name="Set progress" sid="796269959155288" type="lifeProgress">
+                    <param id="0" name="Value">player.life</param>
+                </action>
+                <action id="3" name="Set progress" sid="213505692851216" type="progressExtrintor">
+                    <param id="0" name="Value">cargaExtintor</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="548495959597473">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="444140553552966" type="System">
+                            <param id="0" name="First value">foco.Count</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="1" name="Stop flashing" sid="397614516766891" type="fire_alarm" />
+                        <action id="-15" name="Set visible" sid="657530284427315" type="fire_alarm">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="908310762689516" type="txtIncendios">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="6" name="Stop" sid="395943683231840" type="Audio">
+                            <param id="0" name="Tag">&quot;alarme&quot;</param>
+                        </action>
+                        <action id="6" name="Stop" sid="855906675603535" type="Audio">
+                            <param id="0" name="Tag">&quot;fogo&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="336953796356302">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="622408909793234" type="System">
+                            <param id="0" name="First value">contadoExplosao</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">totIncendioFase</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="514867174380455" type="System">
+                            <param id="0" name="Variable">isGameOver</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="615889025919940" type="System">
+                            <param id="0" name="Variable">mensagemFinal</param>
+                            <param id="1" name="Value">&quot;KABOOOM!!!&quot;&amp;newline&amp;&quot;ABANDONAR NAVIO!&quot;&amp;newline&amp;&quot;FOGO NAO EXTINTO A TEMPO!&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="103166319412163" type="System">
+                            <param id="0" name="Variable">Saldo</param>
+                            <param id="1" name="Value">Saldo * (-1)</param>
+                        </action>
+                        <action id="0" name="Call function" sid="217363483456066" type="Function">
+                            <param id="0" name="Name">&quot;calcularPontos&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="695939129795031" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="376389507573973" type="System">
+                            <param id="0" name="Layout">Pontuacao</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="112545679933674">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="656791901627189" type="System">
+                            <param id="0" name="First value">player.life</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="377261529201579" type="System">
+                            <param id="0" name="Variable">isGameOver</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="486811220360987" type="System">
+                            <param id="0" name="Variable">mensagemFinal</param>
+                            <param id="1" name="Value">&quot;DESCANSE EM PAZ!&quot;&amp;newline&amp;&quot;NAO DEU TEMPO!&quot;&amp;newline&amp;&quot;O FOGO SE ALASTROU E TE PEGOU!&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="462607060894580" type="System">
+                            <param id="0" name="Variable">Saldo</param>
+                            <param id="1" name="Value">Saldo * (-1)</param>
+                        </action>
+                        <action id="0" name="Call function" sid="648443155160989" type="Function">
+                            <param id="0" name="Name">&quot;calcularPontos&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="242759836869214" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="232348727121940" type="System">
+                            <param id="0" name="Layout">Pontuacao</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="494570776409461">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="698297292594786" type="System">
+                            <param id="0" name="First value">incendioApagado</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">totIncendioFase</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="166779434365945" type="System">
+                            <param id="0" name="Variable">mensagemFinal</param>
+                            <param id="1" name="Value">&quot;UFA!!!&quot;&amp;newline&amp;&quot;TODOS OS FOGOS APAGADOS!&quot;&amp;newline&amp;&quot;MUITO BEM!&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="638709967684334" type="Function">
+                            <param id="0" name="Name">&quot;calcularPontos&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="225285574535578" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="546025068494160" type="System">
+                            <param id="0" name="Layout">Pontuacao</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="229108168692342">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="598713788363523" type="System">
+                    <param id="0" name="Interval (seconds)">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="731486340410402" type="System">
+                    <param id="0" name="Variable">tempo</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="338761807462262">
+            <conditions>
+                <condition id="0" name="On function" sid="404496166652686" type="Function">
+                    <param id="0" name="Name">&quot;calcularPontos&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="810478476082870">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="537061967936879" type="System">
+                            <param id="0" name="Variable">calculandoPontos</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="461638293283147" type="System">
+                            <param id="0" name="Variable">calculandoPontos</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="33" name="Stop all" sid="221473081150156" type="Audio" />
+                        <action id="0" name="Play" sid="760884001832561" type="Audio">
+                            <param id="0" name="Audio file">musica</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">100</param>
+                            <param id="1" name="Tag (optional)">&quot;musica&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="372860868276682" type="System">
+                            <param id="0" name="Variable">pontosTotais</param>
+                            <param id="1" name="Value">pontosTotais + (incendioApagado * 1000) - (contadoExplosao * 50000) - (tempo * 100) + Saldo</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="632547511935644" type="System">
+                            <param id="0" name="Variable">mensagemPontos</param>
+                            <param id="1" name="Value">&quot;SALDO ($): &quot;&amp; str(Saldo)&amp;newline&amp;&quot;FOGO APAGADO (+): &quot; &amp;incendioApagado&amp; &quot; X 1000 = &quot;&amp; str(incendioApagado*1000) &amp;newline&amp;&quot;EXPLOSAO (-): &quot; &amp;contadoExplosao&amp; &quot; X 50000 = &quot;&amp; str(contadoExplosao*50000) &amp;newline&amp;&quot;TEMPO (-): &quot; &amp;tempo&amp; &quot; X 100 = &quot;&amp; str(tempo*100)&amp;newline&amp;&quot;TOTAL DE PONTOS (=) &quot; &amp; pontosTotais</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="589705052163617" type="System">
+                            <param id="0" name="Variable">playrLife</param>
+                            <param id="1" name="Value">player.life</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

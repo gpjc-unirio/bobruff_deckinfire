@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>evStart</name>
+    <events>
+        <include>evGlobalUtils</include>
+        <event-block sid="284041028100325">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="210245499409514" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">btnPlay</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="738667653875346" type="System">
+                    <param id="0" name="Variable">nivel</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="307549814303991" type="System">
+                    <param id="0" name="Variable">Saldo</param>
+                    <param id="1" name="Value">1000000</param>
+                </action>
+                <action id="-9" name="Set value" sid="851158207992359" type="System">
+                    <param id="0" name="Variable">playrLife</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="433237181699280" type="System">
+                    <param id="0" name="Layout">ShipDeck</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="295071563715421">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="100397200717895" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">btnAvancar</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="464584374959404" type="System">
+                    <param id="0" name="Variable">nivel</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="560183106278831" type="System">
+                    <param id="0" name="Layout">Narrativa</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="170333917647353">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="788053263421763" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">btnRecomecar</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="135768254230721" type="System">
+                    <param id="0" name="Variable">nivel</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="798455888770492" type="System">
+                    <param id="0" name="Layout">ComoJogar</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="211220609339399">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="581615067777344" type="Mouse">
+                    <param id="0" name="Object">btnPlay</param>
+                </condition>
+                <condition id="7" name="Cursor is over object" sid="796082491324909" type="Mouse">
+                    <param id="0" name="Object">btnAvancar</param>
+                </condition>
+                <condition id="7" name="Cursor is over object" sid="619753921362981" type="Mouse">
+                    <param id="0" name="Object">btnRecomecar</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="599581580204521" type="Mouse">
+                    <param id="0" name="Cursor style">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="269837572345093">
+            <conditions>
+                <condition id="-22" name="Else" sid="399725744253418" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="494713994492417" type="Mouse">
+                    <param id="0" name="Cursor style">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="853045442957079">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="483550068951636" type="System" />
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="671878353730306" type="Audio" />
+                <action id="0" name="Play" sid="382975523321771" type="Audio">
+                    <param id="0" name="Audio file">musica</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">100</param>
+                    <param id="1" name="Tag (optional)">&quot;musica&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

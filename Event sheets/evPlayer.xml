@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>evPlayer</name>
+    <events>
+        <variable constant="0" name="cargaExtintor" sid="690279252023200" static="0" type="number">0</variable>
+        <variable constant="0" name="extintorEmUso" sid="393927608655739" static="0" type="number">0</variable>
+        <variable constant="0" name="tiro" sid="857253886951812" static="0" type="number">0</variable>
+        <variable constant="0" name="distancia" sid="976344587820820" static="0" type="number">0</variable>
+        <variable constant="0" name="mAngle" sid="338147202242095" static="0" type="number">0</variable>
+        <event-block sid="889755999805867">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="634782375128144" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="406473677086760" type="System">
+                    <param id="0" name="Variable">mAngle</param>
+                    <param id="1" name="Value">angle(Player.X, Player.Y, Mouse.X(&quot;game&quot;), Mouse.Y(&quot;game&quot;))</param>
+                </action>
+                <action id="-8" name="Set angle" sid="938118094711005" type="player">
+                    <param id="0" name="Angle">mAngle</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="575774518275644">
+            <conditions>
+                <condition behavior="DragDrop" id="2" name="On drop" sid="953736581315429" type="a" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="950068170172526">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="773439712496924" type="a">
+                            <param id="0" name="Object">Equipar</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="555722607597143" type="a">
+                            <param id="0" name="X">Equipar.X</param>
+                            <param id="1" name="Y">Equipar.Y</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="764962765783338" type="System">
+                            <param id="0" name="Variable">cargaExtintor</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="889400417789840" type="Equipar">
+                            <param id="0" name="Instance variable">equipado</param>
+                            <param id="1" name="Value">a.tipo</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="515726468282248" type="b">
+                            <param id="0" name="X">float(b.StartX)</param>
+                            <param id="1" name="Y">float(a.StartY)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="560609136630722" type="c">
+                            <param id="0" name="X">float(c.StartX)</param>
+                            <param id="1" name="Y">float(a.StartY)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="859411450474709">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="999788774828362" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="134434486677936" type="a">
+                            <param id="0" name="X">float(a.StartX)</param>
+                            <param id="1" name="Y">float(a.StartY)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="333478047142906">
+            <conditions>
+                <condition behavior="DragDrop" id="2" name="On drop" sid="159174381232984" type="b" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="201436442787244">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="260402762134441" type="b">
+                            <param id="0" name="Object">Equipar</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="861052603413821" type="b">
+                            <param id="0" name="X">Equipar.X</param>
+                            <param id="1" name="Y">Equipar.Y</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="524798085984693" type="System">
+                            <param id="0" name="Variable">cargaExtintor</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="926600179041310" type="Equipar">
+                            <param id="0" name="Instance variable">equipado</param>
+                            <param id="1" name="Value">b.tipo</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="865061823209125" type="a">
+                            <param id="0" name="X">float(a.StartX)</param>
+                            <param id="1" name="Y">float(a.StartY)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="895936760380866" type="c">
+                            <param id="0" name="X">float(c.StartX)</param>
+                            <param id="1" name="Y">float(a.StartY)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="909747267500128">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="263969522846063" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="813306487361565" type="b">
+                            <param id="0" name="X">float(b.StartX)</param>
+                            <param id="1" name="Y">float(a.StartY)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="310019559304851">
+            <conditions>
+                <condition behavior="DragDrop" id="2" name="On drop" sid="268815964977289" type="c" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="428546182196499">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="895198630327381" type="c">
+                            <param id="0" name="Object">Equipar</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="693830079440758" type="c">
+                            <param id="0" name="X">Equipar.X</param>
+                            <param id="1" name="Y">Equipar.Y</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="104425819422435" type="System">
+                            <param id="0" name="Variable">cargaExtintor</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="781205316834582" type="Equipar">
+                            <param id="0" name="Instance variable">equipado</param>
+                            <param id="1" name="Value">c.tipo</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="514893366297354" type="b">
+                            <param id="0" name="X">float(b.StartX)</param>
+                            <param id="1" name="Y">float(a.StartY)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="971957581438014" type="a">
+                            <param id="0" name="X">float(a.StartX)</param>
+                            <param id="1" name="Y">float(a.StartY)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="173941617916771">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="272777915539122" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="271084473223639" type="c">
+                            <param id="0" name="X">float(c.StartX)</param>
+                            <param id="1" name="Y">float(a.StartY)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="193379497917917">
+            <conditions>
+                <condition id="2" name="Mouse button is down" sid="349006676662700" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="344750903898934" type="Equipar">
+                    <param id="0" name="Instance variable">equipado</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">&quot;&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="599702715847839" type="System">
+                    <param id="0" name="Variable">extintorEmUso</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="317130852725127">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="844401625487509" type="Mouse">
+                            <param id="0" name="Object">foco</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="612695831493086" type="System">
+                            <param id="0" name="Variable">distancia</param>
+                            <param id="1" name="Value">distance(player.X, player.Y, Mouse.X, Mouse.Y)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="503237036496080">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="258977313332991" type="System">
+                                    <param id="0" name="First value">distance(player.X, player.Y, Mouse.X, Mouse.Y)</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">100</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="711440479650785" type="System">
+                                    <param id="0" name="Variable">cargaExtintor</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="888912896024408" type="player">
+                                    <param id="0" name="Object">apagarIncendio</param>
+                                    <param id="1" name="Layer">&quot;game&quot;</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="287764946368545" type="Audio">
+                                    <param id="0" name="Audio file">extintor</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">50</param>
+                                    <param id="1" name="Tag (optional)">&quot;extintor&quot;</param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="960521382747333" type="System">
+                                    <param id="0" name="Variable">cargaExtintor</param>
+                                    <param id="1" name="Value">1.5</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="555393872466981">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="459424079362270" type="System">
+                                            <param id="0" name="Variable">tiro</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="606110923544011" type="player">
+                                            <param id="0" name="Object">partApaga</param>
+                                            <param id="1" name="Layer">&quot;game&quot;</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="673584921449687">
+            <conditions>
+                <condition id="3" name="On button released" sid="361807222745066" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="118019623674232" type="apagarIncendio" />
+                <action id="-9" name="Destroy" sid="363384149762106" type="partApaga" />
+                <action id="6" name="Stop" sid="700960260927594" type="Audio">
+                    <param id="0" name="Tag">&quot;extintor&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="165282516400950" type="System">
+                    <param id="0" name="Variable">extintorEmUso</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="235873251135852">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="303055550968139" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="552211701357959">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="654542016569707" type="partApaga" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="920274966417228" type="System">
+                            <param id="0" name="Variable">tiro</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="812009979726613">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="178132097005683" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="485146511533585" type="System">
+                            <param id="0" name="Variable">tiro</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="998386818590595">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="490682398443835" type="System">
+                            <param id="0" name="Variable">cargaExtintor</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="918803988594568" type="Equipar">
+                            <param id="0" name="Instance variable">equipado</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="852417239594963" type="b">
+                            <param id="0" name="X">float(b.StartX)</param>
+                            <param id="1" name="Y">float(a.StartY)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="590311339057541" type="c">
+                            <param id="0" name="X">float(c.StartX)</param>
+                            <param id="1" name="Y">float(a.StartY)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="968858715038638" type="a">
+                            <param id="0" name="X">float(a.StartX)</param>
+                            <param id="1" name="Y">float(a.StartY)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="429560285757003" type="Equipar">
+                            <param id="0" name="Instance variable">equipado</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="243670648415484" type="apagarIncendio" />
+                        <action id="-9" name="Destroy" sid="172237076472673" type="partApaga" />
+                        <action id="6" name="Stop" sid="156067328073257" type="Audio">
+                            <param id="0" name="Tag">&quot;extintor&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="589509819521286">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="283237955969312" type="player">
+                    <param id="0" name="Object">explosao</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="582399397080086" type="player">
+                    <param id="0" name="Instance variable">life</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="328829655793158">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="249379652557725" type="player">
+                    <param id="0" name="Object">explosao</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="224581926694887" type="player">
+                    <param id="0" name="Instance variable">life</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="605012777708852">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="882378439136556" type="player">
+                    <param id="0" name="Object">incendio</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="633503465661550" type="player">
+                    <param id="0" name="Instance variable">life</param>
+                    <param id="1" name="Value">0.5</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>evGameOver</name>
+    <events>
+        <event-block sid="713567956566546">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="343437040148342" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">btnRecomecar</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="448716850094514" type="System">
+                    <param id="0" name="Layout">StartGame</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="632878082778533">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="285930506624973" type="Mouse">
+                    <param id="0" name="Object">btnRecomecar</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="372468881982777" type="Mouse">
+                    <param id="0" name="Cursor style">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="583021601530417">
+            <conditions>
+                <condition id="-22" name="Else" sid="106082950650665" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="326202460597827" type="Mouse">
+                    <param id="0" name="Cursor style">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

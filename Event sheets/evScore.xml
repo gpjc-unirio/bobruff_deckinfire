@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>evScore</name>
+    <events>
+        <include>evGlobalUtils</include>
+        <event-block sid="787653626062389">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="978858549584751" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set web font" sid="275138344098742" type="txtPontuacao">
+                    <param id="0" name="Family name">&quot;crush&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="560795787107900" type="txtMensagem">
+                    <param id="0" name="Family name">&quot;crush&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="501593267659818" type="txtMensagemPontos">
+                    <param id="0" name="Family name">&quot;crush&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="168293602312497" type="txtMensagem">
+                    <param id="0" name="Text">mensagemFinal</param>
+                </action>
+                <action id="0" name="Set text" sid="909500352359252" type="txtMensagemPontos">
+                    <param id="0" name="Text">mensagemPontos</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="274095451505230">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="229959753154458" type="Mouse">
+                    <param id="0" name="Object">avancarBtn</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="506625473737757" type="Mouse">
+                    <param id="0" name="Cursor style">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="188387340435846">
+            <conditions>
+                <condition id="-22" name="Else" sid="479940301226001" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="459410353626004" type="Mouse">
+                    <param id="0" name="Cursor style">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="163636086851192">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="532446223199580" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">avancarBtn</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="177746995339468">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="664976731588141" type="System">
+                            <param id="0" name="Variable">isGameOver</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="592227131434129" type="System">
+                            <param id="0" name="Layout">ShipDeck</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="473507680205750">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="148174808738464" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="719248961977980" type="System">
+                            <param id="0" name="Layout">GameOver</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

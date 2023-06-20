@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>evIncendio</name>
+    <events>
+        <event-block sid="552272633589697">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="272905332783931" type="System">
+                    <param id="0" name="Interval (seconds)">0.5</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="922162856354763">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="176235312262860" type="System">
+                            <param id="0" name="Object">foco</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="457752723132522" type="foco">
+                            <param id="0" name="Instance variable">tempo</param>
+                            <param id="1" name="Value">foco.acelerador</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="386843172445412" type="System">
+                            <param id="0" name="Variable">Saldo</param>
+                            <param id="1" name="Value">500</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="541182617502792">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="140220924949080" type="foco">
+                                    <param id="0" name="Instance variable">tempo</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="414039959390487">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="949160006005437" type="foco">
+                                            <param id="0" name="Instance variable">combatido</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                                <event-block sid="104503518227343">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="903950239225398" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="655073369538968" type="foco">
+                                            <param id="0" name="Object">explosao</param>
+                                            <param id="1" name="Layer">&quot;game&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="320221934007661" type="foco">
+                                            <param id="0" name="Object">shadow</param>
+                                            <param id="1" name="Layer">&quot;game&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="518267271108065" type="Audio">
+                                            <param id="0" name="Audio file">explosao</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">30</param>
+                                            <param id="1" name="Tag (optional)">&quot;explosao&quot;</param>
+                                        </action>
+                                        <action id="-18" name="Rotate clockwise" sid="447076747662081" type="shadow">
+                                            <param id="0" name="Degrees">random(360)</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="831989381332451" type="System">
+                                            <param id="0" name="Variable">contadoExplosao</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-11" name="Subtract from" sid="420079629275033" type="System">
+                                            <param id="0" name="Variable">Saldo</param>
+                                            <param id="1" name="Value">(50000)</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="120705581512804" type="foco" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="902977524529056">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="330294010362530" type="Mouse">
+                    <param id="0" name="Object">foco</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="796003455111916" type="Mouse">
+                    <param id="0" name="Cursor style">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="703030367714938">
+                    <conditions>
+                        <condition id="-3" inverted="1" name="Is on-screen" sid="240956913474785" type="icon_a" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="792487532133385" type="System">
+                            <param id="0" name="Object to create">icon_a</param>
+                            <param id="1" name="Layer">&quot;game&quot;</param>
+                            <param id="2" name="X">foco.X</param>
+                            <param id="3" name="Y">foco.Y</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="858676417377426" type="icon_a">
+                            <param id="0" name="Frame number">int(foco.tipo)</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="375929150239311" type="txtTipo">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="210169696278713" type="txtTipo">
+                            <param id="0" name="X">icon_a.ImagePointX(1)</param>
+                            <param id="1" name="Y">icon_a.ImagePointY(1)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="314223889075584">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="535648566014744" type="foco">
+                                    <param id="0" name="Instance variable">tipo</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;0&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="444561344343092" type="txtTipo">
+                                    <param id="0" name="Text">&quot;Melhor extintor: Água&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="525504171989589">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="232158522542995" type="foco">
+                                    <param id="0" name="Instance variable">tipo</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;1&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="564911891459694" type="txtTipo">
+                                    <param id="0" name="Text">&quot;Melhor extintor: Pó Químico&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="825855067720236">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="881633765582981" type="foco">
+                                    <param id="0" name="Instance variable">tipo</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;2&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="494177384927828" type="txtTipo">
+                                    <param id="0" name="Text">&quot;Melhor extintor: CO2&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="759968240412827">
+            <conditions>
+                <condition id="-22" name="Else" sid="748541839231336" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="707546772901782" type="Mouse">
+                    <param id="0" name="Cursor style">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="643529750930920" type="txtTipo">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="563792730973705">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="304584153691054" type="icon_a" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="878238362494308" type="icon_a" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="277949466811425">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="847423700656579" type="partApaga">
+                    <param id="0" name="Object">foco</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="430065616027711">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="936715060277521" type="foco">
+                            <param id="0" name="Instance variable">tipo</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;0&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="526673380052373" type="foco">
+                            <param id="0" name="Instance variable">combatido</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="730485192251714" type="foco" />
+                        <action id="-9" name="Destroy" sid="524218311150799" type="partApaga" />
+                        <action id="-9" name="Destroy" sid="369174661084944" type="apagarIncendio" />
+                        <action id="-10" name="Add to" sid="995170028563520" type="System">
+                            <param id="0" name="Variable">incendioApagado</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="113979886288633">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="131462185585442" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="567562519386908">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="990840283849440" type="foco">
+                                    <param id="0" name="Instance variable">tipo</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;1&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="202290173035379">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="254450682546403" type="Equipar">
+                                            <param id="0" name="Instance variable">equipado</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;A&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="227190201092764" type="foco">
+                                            <param id="0" name="Instance variable">acelerador</param>
+                                            <param id="1" name="Value">15</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="630845149771665">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="167829226057174" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="366587359229856" type="foco">
+                                            <param id="0" name="Instance variable">combatido</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="832460734694856" type="foco" />
+                                        <action id="-9" name="Destroy" sid="270461401593199" type="partApaga" />
+                                        <action id="-9" name="Destroy" sid="406126851930601" type="apagarIncendio" />
+                                        <action id="-10" name="Add to" sid="628025532299026" type="System">
+                                            <param id="0" name="Variable">incendioApagado</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="774191034862526">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="910335495898229" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="963808492497884">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="381911049533730" type="foco">
+                                            <param id="0" name="Instance variable">tipo</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;2&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="424255033467773">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="751059936490571" type="Equipar">
+                                                    <param id="0" name="Instance variable">equipado</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;A&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="381089920444362" type="foco">
+                                                    <param id="0" name="Instance variable">acelerador</param>
+                                                    <param id="1" name="Value">15</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block any="1" sid="957834169088465">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="498785069671212" type="Equipar">
+                                                    <param id="0" name="Instance variable">equipado</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;B&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="972435081389078" type="foco">
+                                                    <param id="0" name="Instance variable">acelerador</param>
+                                                    <param id="1" name="Value">15</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="722897993835999" type="foco">
+                                                    <param id="0" name="Instance variable">combatido</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="553581452141395" type="foco" />
+                                                <action id="-9" name="Destroy" sid="907303463404491" type="partApaga" />
+                                                <action id="-9" name="Destroy" sid="101576315528637" type="apagarIncendio" />
+                                                <action id="-10" name="Add to" sid="175079823670293" type="System">
+                                                    <param id="0" name="Variable">incendioApagado</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block any="1" sid="635057744095106">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="458145298355060" type="Equipar">
+                                                    <param id="0" name="Instance variable">equipado</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;C&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="273816837986998" type="foco">
+                                                    <param id="0" name="Instance variable">combatido</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="713302951415274" type="System">
+                                                    <param id="0" name="Seconds">1</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="583425834488996" type="foco" />
+                                                <action id="-9" name="Destroy" sid="437327534038315" type="apagarIncendio" />
+                                                <action id="-9" name="Destroy" sid="797307756914075" type="partApaga" />
+                                                <action id="-10" name="Add to" sid="139751586112221" type="System">
+                                                    <param id="0" name="Variable">incendioApagado</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="482006778623485">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="906654472987831" type="System" />
+                                            </conditions>
+                                            <actions />
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="303353287888292">
+            <conditions>
+                <condition id="-18" name="On created" sid="167477380294747" type="foco" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="960261081200102" type="foco">
+                    <param id="0" name="Instance variable">tipo</param>
+                    <param id="1" name="Value">str(int(random(0,3)))</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="760784863638430">
+            <conditions>
+                <condition id="-11" name="For Each" sid="488396671417488" type="System">
+                    <param id="0" name="Object">foco</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="718319874719802">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="903491524183448" type="foco" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="319649149278535" type="foco">
+                            <param id="0" name="Object">incendio</param>
+                            <param id="1" name="Layer">&quot;game&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-19" name="Rotate counter-clockwise" sid="581614242583507" type="incendio">
+                            <param id="0" name="Degrees">90</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

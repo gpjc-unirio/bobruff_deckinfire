@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>evGlobalUtils</name>
+    <events>
+        <variable constant="0" name="playrLife" sid="663196245652479" static="0" type="number">100</variable>
+        <variable constant="0" name="isGameOver" sid="866791070358233" static="0" type="number">0</variable>
+        <variable constant="0" name="mensagemPontos" sid="297360093583704" static="0" type="text"></variable>
+        <variable constant="0" name="mensagemFinal" sid="324387245198561" static="0" type="text"></variable>
+        <variable constant="0" name="Saldo" sid="847804270153480" static="0" type="number">1000000</variable>
+        <variable constant="0" name="nivel" sid="615393368337327" static="0" type="number">0</variable>
+        <variable constant="1" name="INCENDIOS_FASE" sid="839156298997198" static="0" type="number">2</variable>
+        <variable constant="0" name="pontosTotais" sid="611401397473302" static="0" type="number">0</variable>
+        <variable constant="0" name="contadoExplosao" sid="101171768700468" static="0" type="number">0</variable>
+        <variable constant="0" name="incendioApagado" sid="419228515041086" static="0" type="number">0</variable>
+        <variable constant="0" name="contadorIncendio" sid="582770513724440" static="0" type="number">0</variable>
+    </events>
+</c2eventsheet>

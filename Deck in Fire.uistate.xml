@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="4">StartGame</layout>
+        <layout order="5">ShipDeck</layout>
+        <event-sheet order="0">evIncendio</event-sheet>
+        <event-sheet active="1" order="1">evPlayer</event-sheet>
+        <event-sheet order="2">evShip</event-sheet>
+        <event-sheet order="3">evStart</event-sheet>
+        <event-sheet order="6">evGlobalUtils</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1" />
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/dec/" />
+        <folder expanded="1" path="animation-folder/player/" />
+        <folder expanded="1" path="animation-folder/water/" />
+        <folder expanded="1" path="animation-folder/border/" />
+        <folder expanded="1" path="animation-folder/foco/" />
+        <folder expanded="1" path="animation-folder/fire_alarm/" />
+        <folder expanded="1" path="animation-folder/fireArea/" />
+        <folder expanded="1" path="animation-folder/shadow/" />
+        <folder expanded="1" path="animation-folder/hand/" />
+        <folder expanded="1" path="animation-folder/Equipar/" />
+        <folder expanded="1" path="animation-folder/a/" />
+        <folder expanded="1" path="animation-folder/b/" />
+        <folder expanded="1" path="animation-folder/c/" />
+        <folder expanded="1" path="animation-folder/d/" />
+        <folder expanded="1" path="animation-folder/k/" />
+        <folder expanded="1" path="animation-folder/AreaExtintores/" />
+        <folder expanded="1" path="animation-folder/icon_a/" />
+        <folder expanded="1" path="animation-folder/partApaga/" />
+        <folder expanded="1" path="animation-folder/money/" />
+        <folder expanded="1" path="animation-folder/fire_total/" />
+        <folder expanded="1" path="animation-folder/explosion/" />
+        <folder expanded="1" path="animation-folder/save/" />
+        <folder expanded="1" path="animation-folder/zoominflat/" />
+        <folder expanded="1" path="animation-folder/zoomoutflat/" />
+        <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/life/" />
+        <folder expanded="1" path="animation-folder/sea/" />
+        <folder expanded="1" path="animation-folder/start/" />
+        <folder expanded="1" path="animation-folder/btnPlay/" />
+        <folder expanded="1" path="animation-folder/como_jogar_novo/" />
+        <folder expanded="1" path="animation-folder/btnAvancar/" />
+        <folder expanded="1" path="animation-folder/game_over/" />
+        <folder expanded="1" path="animation-folder/btnRecomecar/" />
+        <folder expanded="1" path="animation-folder/narrativa/" />
+        <folder expanded="1" path="animation-folder/back_img/" />
+        <folder expanded="1" path="animation-folder/avancarBtn/" />
+    </folders-expanded>
+</c2uistate>

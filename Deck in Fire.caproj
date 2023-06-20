@@ -1,0 +1,815 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Deck in Fire</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>1dgm1aer7mux4</unique-id>
+    <saved-with-version>28000</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="progressbar" version="1">Progress bar</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="DragnDrop" version="1">Drag &amp; Drop</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Brad Larson" id="stretch">Stretch</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>420</width>
+        <height>270</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>StartGame</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar only</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="dec" sid="291574380229772">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="696507188916702" speed="5">
+                    <frame duration="1" hotspotX="0.515429" hotspotY="0.266917" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\dec.png">
+                        <collision-poly>
+                            <point x="0.210286" y="0.0037594" />
+                            <point x="0.820571" y="0.0037594" />
+                            <point x="0.998857" y="0.263158" />
+                            <point x="0.963429" y="0.996241" />
+                            <point x="0.0674286" y="0.996241" />
+                            <point x="0.00114286" y="0.263158" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="player" sid="215185312016533">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="life" sid="414743663435986" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="ScrollTo" sid="127121904424290">
+                    <behavior id="scrollto" />
+                </behavior-type>
+                <behavior-type name="8Direction" sid="594369494151854">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="566599983954061" speed="5">
+                    <frame duration="1" hotspotX="0.489286" hotspotY="0.480769" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\player.png">
+                        <image-point name="Fire" x="0.978571" y="0.496154" />
+                        <collision-poly>
+                            <point x="0.807692" y="0.0751872" />
+                            <point x="0.994506" y="0.496241" />
+                            <point x="0.807692" y="0.917294" />
+                            <point x="0.445055" y="0.984962" />
+                            <point x="0.126373" y="0.857142" />
+                            <point x="0.00549499" y="0.496241" />
+                            <point x="0.12088" y="0.127819" />
+                            <point x="0.445055" y="0.0075188" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="930289519384910">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="water" sid="769410812457446">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="Stretch">
+                    <effect id="stretch" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="826557638813835" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\water.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground" sid="660623758726836">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\water.png" />
+        </object-type>
+        <object-type name="incendio" sid="828232016181357">
+            <plugin id="Particles" />
+            <instance-variables>
+                <instance-variable name="tipo" sid="249829636302360" type="number" />
+                <instance-variable name="tempo" sid="306362404370530" type="number" />
+                <instance-variable name="combatido_certo" sid="354091751466802" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="531270076623564">
+                    <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="162701057921748">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="border" sid="249406890954425">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="951505884765995">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="294514139184646" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="foco" sid="548716676515731">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="tipo" sid="125816014374599" type="string" />
+                <instance-variable name="tempo" sid="788637816508446" type="number" />
+                <instance-variable name="acelerador" sid="318337974665447" type="number" />
+                <instance-variable name="combatido" sid="861684777363779" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="916237765016745">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="130573696673606" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="novoFoco" sid="179185048375846">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="explosao" sid="527955101954466">
+            <plugin id="Particles" />
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="149009583848928">
+                    <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="234023252158972">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="fire_alarm" sid="179214868606553">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="461277634790647">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="363488275858068" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500808" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\fire_alarm.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.100162" />
+                            <point x="0.66875" y="0.42811" />
+                            <point x="0.82" y="0.767367" />
+                            <point x="0.5" y="0.812601" />
+                            <point x="0.2225" y="0.712439" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Function" sid="249237844523803">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="txtIncendios" sid="656687535591600">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="fireArea" sid="369556142516379">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="353299386712256" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.812" y="0.176" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="shadow" sid="559319560182476">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="206837008744156">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="898019607490061" speed="5">
+                    <frame duration="1" hotspotX="0.449704" hotspotY="0.583333">
+                        <collision-poly>
+                            <point x="0.207101" y="0.224359" />
+                            <point x="0.497041" y="0.00641026" />
+                            <point x="0.804734" y="0.211538" />
+                            <point x="0.887574" y="0.5" />
+                            <point x="0.863905" y="0.852564" />
+                            <point x="0.497041" y="0.948718" />
+                            <point x="0.0828402" y="0.910256" />
+                            <point x="0.0414201" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="hand" sid="189902501878515">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="894767167934014" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\hand.png">
+                        <collision-poly>
+                            <point x="0.320313" y="0.320313" />
+                            <point x="0.5" y="0.199219" />
+                            <point x="0.601563" y="0.398438" />
+                            <point x="0.878906" y="0.5" />
+                            <point x="0.800781" y="0.800781" />
+                            <point x="0.5" y="0.957031" />
+                            <point x="0.242188" y="0.757813" />
+                            <point x="0.121094" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Equipar" sid="875266844791883">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="equipado" sid="358578516026062" type="string" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="309245738775463" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="a" sid="274011907625813">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="tipo" sid="548721754490279" type="string" />
+                <instance-variable name="StartY" sid="721890395418850" type="string" />
+                <instance-variable name="StartX" sid="779272213543397" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="DragDrop" sid="846315786536710">
+                    <behavior id="DragnDrop" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="656195335069154" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.503597" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\a.png" />
+                    <frame duration="1" hotspotX="0.521905" hotspotY="0.513944" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\extintor_agua.png">
+                        <collision-poly>
+                            <point x="0.0249871" y="0.0160482" />
+                            <point x="0.519101" y="0.0040016" />
+                            <point x="0.986299" y="0.036126" />
+                            <point x="0.968995" y="0.977102" />
+                            <point x="0.0538264" y="0.989148" />
+                            <point x="0.00576085" y="0.512637" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="b" sid="443080259643368">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="tipo" sid="118142960899767" type="string" />
+                <instance-variable name="StartX" sid="877969412959843" type="string" />
+                <instance-variable name="StartY" sid="478514891421467" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="DragDrop" sid="601816868865294">
+                    <behavior id="DragnDrop" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="912008856906444" speed="0">
+                    <frame duration="1" hotspotX="0.502857" hotspotY="0.5" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\b.png" />
+                    <frame duration="1" hotspotX="0.526316" hotspotY="0.514865" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\extintor_co2.png">
+                        <collision-poly>
+                            <point x="0.0214425" y="0.0121622" />
+                            <point x="0.524366" y="0.00135135" />
+                            <point x="0.998051" y="0.0337838" />
+                            <point x="0.982456" y="0.985135" />
+                            <point x="0.0506823" y="0.997297" />
+                            <point x="0.00194932" y="0.514865" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="c" sid="768577659341167">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="tipo" sid="656842223371088" type="string" />
+                <instance-variable name="StartX" sid="421508060262718" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="DragDrop" sid="372006693148381">
+                    <behavior id="DragnDrop" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="250158381716164" speed="0">
+                    <frame duration="1" hotspotX="0.502825" hotspotY="0.503448" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\c.png" />
+                    <frame duration="1" hotspotX="0.514178" hotspotY="0.509259" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\extintor_poquimico.png">
+                        <collision-poly>
+                            <point x="0.00189036" y="0.00132275" />
+                            <point x="0.512287" y="0.00132275" />
+                            <point x="0.965974" y="0.042328" />
+                            <point x="0.94707" y="0.962963" />
+                            <point x="0.512287" y="0.997355" />
+                            <point x="0.0604915" y="0.97619" />
+                            <point x="0.00189036" y="0.509259" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="d" sid="268186001467798">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="tipo" sid="476873277819060" type="string" />
+                <instance-variable name="StartX" sid="537097140098361" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="DragDrop" sid="387650399594215">
+                    <behavior id="DragnDrop" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="610529141724822" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\d.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="k" sid="537527269447608">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="tipo" sid="771294905638386" type="string" />
+                <instance-variable name="StartX" sid="854873611827793" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="DragDrop" sid="563213824609943">
+                    <behavior id="DragnDrop" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="205580128808452" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\k.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="txtExtintore" sid="167194275140197">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="AreaExtintores" sid="936545412413289">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="973125801870540" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="icon_a" sid="518442603070822">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="870120980605969" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\icon_a.png">
+                        <image-point name="Imagepoint 1" x="0.5" y="1" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.502857" hotspotY="0" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\icon_b - Copia.png">
+                        <image-point name="Imagepoint 1" x="0.502857" y="1" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.502825" hotspotY="0" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\icon_c.png">
+                        <image-point name="Imagepoint 1" x="0.502825" y="1" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="apagarIncendio" sid="507491775899382">
+            <plugin id="Particles" />
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="262798856480533">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="partApaga" sid="739958786506528">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="633288461649128">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="926513018148002">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="349420055738710" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="money" sid="967996189288055">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="653741721237757" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\money.png">
+                        <collision-poly>
+                            <point x="0.339844" y="0.339844" />
+                            <point x="0.5" y="0.179688" />
+                            <point x="0.832031" y="0.167969" />
+                            <point x="0.984375" y="0.5" />
+                            <point x="0.921875" y="0.921875" />
+                            <point x="0.078125" y="0.921875" />
+                            <point x="0.015625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="txtDinheiro" sid="612762010788422">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="fire_total" sid="285947858314570">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="782948045296960" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500458" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\fire_total.png">
+                        <collision-poly>
+                            <point x="0.42" y="0.307974" />
+                            <point x="0.5" y="0.129239" />
+                            <point x="0.55875" y="0.323556" />
+                            <point x="0.77625" y="0.499542" />
+                            <point x="0.76375" y="0.826764" />
+                            <point x="0.5" y="0.890926" />
+                            <point x="0.22125" y="0.837764" />
+                            <point x="0.14" y="0.499542" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="explosion" sid="705155987945723">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="215032888108355" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\explosion.png">
+                        <collision-poly>
+                            <point x="0.196289" y="0.196289" />
+                            <point x="0.5" y="0.126465" />
+                            <point x="0.669922" y="0.330078" />
+                            <point x="0.757324" y="0.5" />
+                            <point x="0.751953" y="0.751953" />
+                            <point x="0.5" y="0.782715" />
+                            <point x="0.310059" y="0.689941" />
+                            <point x="0.20459" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="save" sid="713547846810393">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="521764604199833" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\save.png">
+                        <collision-poly>
+                            <point x="0.183594" y="0.183594" />
+                            <point x="0.5" y="0.0253906" />
+                            <point x="0.855469" y="0.144531" />
+                            <point x="0.787109" y="0.5" />
+                            <point x="0.787109" y="0.787109" />
+                            <point x="0.5" y="1" />
+                            <point x="0.109375" y="0.890625" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="txtIncendiosTotal" sid="995153596239687">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="txtExplosoes" sid="363602125150805">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="txtApagados" sid="990630158658786">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="zoominflat" sid="882411647744246">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="308815939491020" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\zoom-in-flat.png">
+                        <collision-poly>
+                            <point x="0.144531" y="0.144531" />
+                            <point x="0.5" y="0" />
+                            <point x="0.855469" y="0.144531" />
+                            <point x="1" y="0.5" />
+                            <point x="0.855469" y="0.855469" />
+                            <point x="0.5" y="1" />
+                            <point x="0.144531" y="0.855469" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="zoomoutflat" sid="948475394702274">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="565663846979511" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\zoom-out-flat.png">
+                        <collision-poly>
+                            <point x="0.144531" y="0.144531" />
+                            <point x="0.5" y="0" />
+                            <point x="0.855469" y="0.144531" />
+                            <point x="1" y="0.5" />
+                            <point x="0.855469" y="0.855469" />
+                            <point x="0.5" y="1" />
+                            <point x="0.144531" y="0.855469" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite" sid="243392875512336">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="614924044408868" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\time.png">
+                        <collision-poly>
+                            <point x="0.238281" y="0.238281" />
+                            <point x="0.5" y="0.015625" />
+                            <point x="0.761719" y="0.238281" />
+                            <point x="0.560547" y="0.5" />
+                            <point x="0.759766" y="0.759766" />
+                            <point x="0.5" y="0.984375" />
+                            <point x="0.240234" y="0.759766" />
+                            <point x="0.439453" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="txtTimer" sid="916032223946225">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="life" sid="522110441843201">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="443748194144198" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\life.png">
+                        <collision-poly>
+                            <point x="0.0986328" y="0.0986328" />
+                            <point x="0.5" y="0.15332" />
+                            <point x="0.901367" y="0.0986328" />
+                            <point x="0.927734" y="0.5" />
+                            <point x="0.5" y="0.958984" />
+                            <point x="0.0673828" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="lifeProgress" sid="163326703889200">
+            <plugin id="progressbar" />
+        </object-type>
+        <object-type name="sea" sid="873110229017949">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="192606412150276" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="start" sid="346135321246350">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="386603257966637" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\start.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btnPlay" sid="952032247054601">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="541000887648155" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="como_jogar_novo" sid="317619841822212">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="649473638258332" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\como_jogar_novo.png">
+                        <collision-poly>
+                            <point x="0.0294856" y="0.0462144" />
+                            <point x="0.5" y="0.228122" />
+                            <point x="0.989335" y="0.0167158" />
+                            <point x="0.956085" y="0.499508" />
+                            <point x="0.966123" y="0.946903" />
+                            <point x="0.5" y="0.704031" />
+                            <point x="0.0520703" y="0.918387" />
+                            <point x="0.0664994" y="0.499508" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btnAvancar" sid="769159288234172">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="365448951662348" speed="5">
+                    <frame duration="1" hotspotX="0.604" hotspotY="0.68" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="game_over" sid="846801143892520">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="386613011725791" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\game_over.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btnRecomecar" sid="594935379121979">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="921131542851310" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="narrativa" sid="720201350342952">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="422569729159232" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\narrativa.png">
+                        <collision-poly>
+                            <point x="0.0345044" y="0.0540806" />
+                            <point x="0.5" y="0.182891" />
+                            <point x="0.989335" y="0.0167158" />
+                            <point x="0.966123" y="0.946903" />
+                            <point x="0.5" y="0.820059" />
+                            <point x="0.119824" y="0.812193" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="back_img" sid="822581584031805">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="839906615884084" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\back_img.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="txtPontuacao" sid="131505673072141">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="txtMensagem" sid="322294431357928">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="txtMensagemPontos" sid="147576080322757">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="avancarBtn" sid="647210303074670">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="235783483977890" speed="5">
+                    <frame duration="1" hotspotX="0.501129" hotspotY="0.502825" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\DeckInFire\Imgens\avancarBtn.png">
+                        <collision-poly>
+                            <point x="0.148984" y="0.372881" />
+                            <point x="0.498871" y="0.542373" />
+                            <point x="0.79684" y="0.508475" />
+                            <point x="0.993228" y="0.497175" />
+                            <point x="0.911964" y="0.779661" />
+                            <point x="0.498871" y="0.785311" />
+                            <point x="0.0699774" y="0.824859" />
+                            <point x="0.0970655" y="0.497175" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Audio" sid="767529519149190">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="txtTipo" sid="564332092067561">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="progressExtrintor" sid="566896512049531">
+            <plugin id="progressbar" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>ShipDeck.xml</layout>
+        <layout>GameOver.xml</layout>
+        <layout>Narrativa.xml</layout>
+        <layout>ComoJogar.xml</layout>
+        <layout>StartGame.xml</layout>
+        <layout>Pontuacao.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>evShip.xml</event-sheet>
+        <event-sheet>evPlayer.xml</event-sheet>
+        <event-sheet>evIncendio.xml</event-sheet>
+        <event-sheet>evGlobalUtils.xml</event-sheet>
+        <event-sheet>evGameOver.xml</event-sheet>
+        <event-sheet>evStart.xml</event-sheet>
+        <event-sheet>evScore.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Mouse" uid="2" />
+        <global-instance type="Function" uid="17" />
+        <global-instance type="Audio" uid="60">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder>
+        <file name="alarme.ogg" />
+        <file name="explosao.ogg" />
+        <file name="fogo.ogg" />
+        <file name="extintor.ogg" />
+    </sounds-folder>
+    <music-folder>
+        <file name="musica.ogg" />
+    </music-folder>
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+        <file name="crush.otf" />
+        <file name="crush.woff" />
+        <file name="crush.woff2" />
+        <file name="stylesheet.css" />
+    </files-folder>
+</c2project>
