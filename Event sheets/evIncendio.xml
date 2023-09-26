@@ -79,6 +79,16 @@
                                             <param id="1" name="Value">(50000)</param>
                                         </action>
                                         <action id="-9" name="Destroy" sid="120705581512804" type="foco" />
+                                        <action id="-10" name="Add to" sid="716926233094418" type="System">
+                                            <param id="0" name="Variable">contadorIncendio</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="851424938530211" type="System">
+                                            <param id="0" name="Object to create">foco</param>
+                                            <param id="1" name="Layer">&quot;game&quot;</param>
+                                            <param id="2" name="X">fireArea.X + random(fireArea.Width)</param>
+                                            <param id="3" name="Y">fireArea.Y +random(fireArea.Height)</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                             </sub-events>

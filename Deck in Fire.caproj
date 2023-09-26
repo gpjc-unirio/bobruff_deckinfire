@@ -752,10 +752,29 @@
         <object-type name="progressExtrintor" sid="566896512049531">
             <plugin id="progressbar" />
         </object-type>
+        <object-type name="new_deck" sid="750163953859321">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="846231652735098" speed="5">
+                    <frame duration="1" hotspotX="0.501062" hotspotY="0.5" original-source="C:\Users\tadeu\OneDrive\Área de Trabalho\_Lixos\new_deck.png">
+                        <collision-poly>
+                            <point x="0.07431" y="0.122378" />
+                            <point x="0.498938" y="0.108392" />
+                            <point x="0.825902" y="0.286713" />
+                            <point x="0.961783" y="0.5" />
+                            <point x="0.832272" y="0.723776" />
+                            <point x="0.498938" y="0.902098" />
+                            <point x="0.07431" y="0.877622" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
-        <layout>ShipDeck.xml</layout>
+        <layout>ShipDeck_02.xml</layout>
+        <layout>ShipDeck_01.xml</layout>
         <layout>GameOver.xml</layout>
         <layout>Narrativa.xml</layout>
         <layout>ComoJogar.xml</layout>

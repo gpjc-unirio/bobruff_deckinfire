@@ -9,15 +9,15 @@
                 <condition id="-2" name="On start of layout" sid="978858549584751" type="System" />
             </conditions>
             <actions>
-                <action id="5" name="Set web font" sid="275138344098742" type="txtPontuacao">
+                <action disabled="1" id="5" name="Set web font" sid="275138344098742" type="txtPontuacao">
                     <param id="0" name="Family name">&quot;crush&quot;</param>
                     <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
                 </action>
-                <action id="5" name="Set web font" sid="560795787107900" type="txtMensagem">
+                <action disabled="1" id="5" name="Set web font" sid="560795787107900" type="txtMensagem">
                     <param id="0" name="Family name">&quot;crush&quot;</param>
                     <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
                 </action>
-                <action id="5" name="Set web font" sid="501593267659818" type="txtMensagemPontos">
+                <action disabled="1" id="5" name="Set web font" sid="501593267659818" type="txtMensagemPontos">
                     <param id="0" name="Family name">&quot;crush&quot;</param>
                     <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
                 </action>
@@ -69,11 +69,33 @@
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-2" name="Go to layout" sid="592227131434129" type="System">
-                            <param id="0" name="Layout">ShipDeck</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="789926712742499">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="530422164541540" type="System">
+                                    <param id="0" name="Variable">nivel</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="592227131434129" type="System">
+                                    <param id="0" name="Layout">ShipDeck_02</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="642107662230368">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="871644766756433" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="205317421620038" type="System">
+                                    <param id="0" name="Layout">ShipDeck_01</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="473507680205750">
                     <conditions>

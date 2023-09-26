@@ -10,13 +10,14 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="4">StartGame</layout>
-        <layout order="5">ShipDeck</layout>
+        <layout active="1" order="7">ShipDeck_01</layout>
         <event-sheet order="0">evIncendio</event-sheet>
-        <event-sheet active="1" order="1">evPlayer</event-sheet>
+        <event-sheet order="1">evStart</event-sheet>
         <event-sheet order="2">evShip</event-sheet>
-        <event-sheet order="3">evStart</event-sheet>
-        <event-sheet order="6">evGlobalUtils</event-sheet>
+        <event-sheet order="3">evScore</event-sheet>
+        <event-sheet order="4">evPlayer</event-sheet>
+        <event-sheet order="5">evGlobalUtils</event-sheet>
+        <event-sheet order="6">evGameOver</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -69,5 +70,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/narrativa/" />
         <folder expanded="1" path="animation-folder/back_img/" />
         <folder expanded="1" path="animation-folder/avancarBtn/" />
+        <folder expanded="1" path="animation-folder/new_deck/" />
     </folders-expanded>
 </c2uistate>

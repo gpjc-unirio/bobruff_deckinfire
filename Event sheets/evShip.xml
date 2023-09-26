@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>evShip</name>
     <events>
+        <variable constant="0" name="travarIncendios" sid="888048093805882" static="0" type="number">0</variable>
         <variable constant="0" name="calculandoPontos" sid="553857816420417" static="0" type="number">0</variable>
         <include>evGlobalUtils</include>
         <variable constant="0" name="tempo" sid="315567853562030" static="0" type="number">0</variable>
@@ -14,31 +15,31 @@
                 <condition id="-2" name="On start of layout" sid="597384817175688" type="System" />
             </conditions>
             <actions>
-                <action id="5" name="Set web font" sid="652544084587508" type="txtDinheiro">
+                <action disabled="1" id="5" name="Set web font" sid="652544084587508" type="txtDinheiro">
                     <param id="0" name="Family name">&quot;crush&quot;</param>
                     <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
                 </action>
-                <action id="5" name="Set web font" sid="323234373166722" type="txtApagados">
+                <action disabled="1" id="5" name="Set web font" sid="323234373166722" type="txtApagados">
                     <param id="0" name="Family name">&quot;crush&quot;</param>
                     <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
                 </action>
-                <action id="5" name="Set web font" sid="835646371491226" type="txtExplosoes">
+                <action disabled="1" id="5" name="Set web font" sid="835646371491226" type="txtExplosoes">
                     <param id="0" name="Family name">&quot;crush&quot;</param>
                     <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
                 </action>
-                <action id="5" name="Set web font" sid="882228998874343" type="txtExtintore">
+                <action disabled="1" id="5" name="Set web font" sid="882228998874343" type="txtExtintore">
                     <param id="0" name="Family name">&quot;crush&quot;</param>
                     <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
                 </action>
-                <action id="5" name="Set web font" sid="430082949653205" type="txtIncendios">
+                <action disabled="1" id="5" name="Set web font" sid="430082949653205" type="txtIncendios">
                     <param id="0" name="Family name">&quot;crush&quot;</param>
                     <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
                 </action>
-                <action id="5" name="Set web font" sid="527402499857194" type="txtIncendiosTotal">
+                <action disabled="1" id="5" name="Set web font" sid="527402499857194" type="txtIncendiosTotal">
                     <param id="0" name="Family name">&quot;crush&quot;</param>
                     <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
                 </action>
-                <action id="5" name="Set web font" sid="878975500959215" type="txtTimer">
+                <action disabled="1" id="5" name="Set web font" sid="878975500959215" type="txtTimer">
                     <param id="0" name="Family name">&quot;crush&quot;</param>
                     <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
                 </action>
@@ -93,9 +94,9 @@
                     <param id="0" name="Variable">nivel</param>
                     <param id="1" name="Value">1</param>
                 </action>
-                <action id="-9" name="Set value" sid="862631083547932" type="System">
-                    <param id="0" name="Variable">totIncendioFase</param>
-                    <param id="1" name="Value">nivel * nivel</param>
+                <action id="-9" name="Set value" sid="218573993561660" type="System">
+                    <param id="0" name="Variable">travarIncendios</param>
+                    <param id="1" name="Value">0</param>
                 </action>
             </actions>
         </event-block>
@@ -118,35 +119,47 @@
                 </action>
             </actions>
             <sub-events>
-                <event-block sid="399596417853936">
+                <event-block sid="842231104620280">
                     <conditions>
-                        <condition id="-9" inverted="1" name="Is visible" sid="844851680658676" type="fire_alarm" />
+                        <condition id="-14" name="Compare variable" sid="764042182426670" type="System">
+                            <param id="0" name="Variable">travarIncendios</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
                     </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="779537640736454" type="fire_alarm">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                        <action behavior="Flash" id="0" name="Flash" sid="749638727489649" type="fire_alarm">
-                            <param id="0" name="&apos;On&apos; time">0.1</param>
-                            <param id="1" name="&apos;Off&apos; time">0.1</param>
-                            <param id="2" name="Duration">999999</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="255827798955740" type="txtIncendios">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                        <action id="0" name="Play" sid="832911080142812" type="Audio">
-                            <param id="0" name="Audio file">alarme</param>
-                            <param id="2" name="Loop">1</param>
-                            <param id="3" name="Volume">-10</param>
-                            <param id="1" name="Tag (optional)">&quot;alarme&quot;</param>
-                        </action>
-                        <action id="0" name="Play" sid="494491057634998" type="Audio">
-                            <param id="0" name="Audio file">fogo</param>
-                            <param id="2" name="Loop">1</param>
-                            <param id="3" name="Volume">-10</param>
-                            <param id="1" name="Tag (optional)">&quot;fogo&quot;</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="399596417853936">
+                            <conditions>
+                                <condition id="-9" inverted="1" name="Is visible" sid="844851680658676" type="fire_alarm" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="779537640736454" type="fire_alarm">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="749638727489649" type="fire_alarm">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">999999</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="255827798955740" type="txtIncendios">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="832911080142812" type="Audio">
+                                    <param id="0" name="Audio file">alarme</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">-10</param>
+                                    <param id="1" name="Tag (optional)">&quot;alarme&quot;</param>
+                                </action>
+                                <action id="0" name="Play" sid="494491057634998" type="Audio">
+                                    <param id="0" name="Audio file">fogo</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">-10</param>
+                                    <param id="1" name="Tag (optional)">&quot;fogo&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-block>
@@ -305,6 +318,10 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-9" name="Set value" sid="608140496929573" type="System">
+                            <param id="0" name="Variable">travarIncendios</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                         <action id="-9" name="Set value" sid="166779434365945" type="System">
                             <param id="0" name="Variable">mensagemFinal</param>
                             <param id="1" name="Value">&quot;UFA!!!&quot;&amp;newline&amp;&quot;TODOS OS FOGOS APAGADOS!&quot;&amp;newline&amp;&quot;MUITO BEM!&quot;</param>
